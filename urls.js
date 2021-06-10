@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
     const data = req.body;
     const longUrl = data.longUrl;
     const shortUrlId = shortid.generate();
-    urls[shortUrlId] = longUrl;
+    urls.shortUrlId = longUrl;
     console.log(urls);
     res.send({ shortUrl: `https://urlshortnerapi-1.herokuapp.com/urls/${shortUrlId}` });
 })
