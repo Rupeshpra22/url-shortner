@@ -4,6 +4,7 @@ const port = process.env.PORT || 3000;
 const urls = require("./urls");
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 let allowAccessOrigin = (req,res,next)=>{
     res.header("Access-Control-Allow-Origin", "*");
