@@ -11,7 +11,7 @@ let allowAccessOrigin = (req,res,next)=>{
 app.use(allowAccessOrigin);
 
 app.get('/', (req,res)=>{
-    res.send("URL Shortner backend");
+    res.send({"message": "Url Shortner Backend"});
 })
 
 app.listen(port, ()=>{
