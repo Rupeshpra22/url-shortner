@@ -32,6 +32,7 @@ router.get("/:shortUrlId", (req, res) => {
 
 router.post("/", (req, res) => {
     const data = req.body;
+    console.log(data)
     const longUrl = data.longUrl;
     console.log("url coming from browser", longUrl)
     const shortUrlId = shortid.generate();
