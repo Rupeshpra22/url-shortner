@@ -16,9 +16,9 @@ router.get("/", (req, res) => {
 })
 
 router.get("/:shortUrlId", (req, res) => {
+    console.log(urls)
     const longUrl = urls[req.params.shortUrlId];
     if (longUrl) {
-        console.log(urls)
         // res.send({
         //     shortUrlId: `http://localhost:3000/urls/${req.params.shortUrlId}`,
         //     longUrl: longUrl
