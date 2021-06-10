@@ -25,6 +25,7 @@ router.get("/:shortUrlId", (req, res) => {
         // })
         res.redirect(longUrl);
     } else {
+        res.send(urls)
         res.status(400).send("Url is not present")
     }
 })
@@ -34,6 +35,7 @@ router.post("/", (req, res) => {
     const longUrl = data.longUrl;
     const shortUrlId = shortid.generate();
     urls[shortUrlId] = longUrl;
+    console.log(urls);
     res.send({ shortUrl: `https://urlshortnerapi-1.herokuapp.com/urls/${shortUrlId}` });
 })
 
