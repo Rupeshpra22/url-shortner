@@ -1,0 +1,40 @@
+const express = require("express");
+const router = express.Router();
+const shortid = require("shortid");
+
+const urls = {}
+const userList = [];
+
+router.get("/", (req, res) => {
+    for (const url in urls) {
+        userList.push({
+            shortUrl: `http://localhost:3000/urls/${url}`,
+            longUrl: urls[url]
+        })
+    }
+    res.send(userList)
+})
+
+router.get("/:shortUrlId", (req, res) => {
+    const longUrl = urls[req.params.shortUrlId];
+    if (longUrl) {
+        console.log(urls)
+        // res.send({
+        //     shortUrlId: `http://localhost:3000/urls/${req.params.shortUrlId}`,
+        //     longUrl: longUrl
+        // })
+        res.redirect(longUrl);
+    } else {
+        res.status(400).send("Url is not present")
+    }
+})
+
+router.post("/", (req, res) => {
+    const data = req.body;
+    const longUrl = data.longUrl;
+    const shortUrlId = shortid.generate();
+    urls[shortUrlId] = longUrl;
+    res.send({ shortUrl: `http://localhost:3000/urls/${shortUrlId}` });
+})
+
+module.exports = router

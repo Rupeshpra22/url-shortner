@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
+const urls = require("./urls");
 
 let allowAccessOrigin = (req,res,next)=>{
     res.header("Access-Control-Allow-Origin", "*");
@@ -9,9 +10,11 @@ let allowAccessOrigin = (req,res,next)=>{
 }
 
 app.use(allowAccessOrigin);
+app.use(express.json());
+app.use('/urls', urls);
 
 app.get('/', (req,res)=>{
-    res.send({"message": "Url Shortner Backend"});
+    res.send("URL Shortner backend");
 })
 
 app.listen(port, ()=>{
