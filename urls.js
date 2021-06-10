@@ -8,7 +8,7 @@ const userList = [];
 router.get("/", (req, res) => {
     for (const url in urls) {
         userList.push({
-            shortUrl: `http://localhost:3000/urls/${url}`,
+            shortUrl: `https://urlshortnerapi-1.herokuapp.com/urls/${url}`,
             longUrl: urls[url]
         })
     }
@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
     const longUrl = data.longUrl;
     const shortUrlId = shortid.generate();
     urls[shortUrlId] = longUrl;
-    res.send({ shortUrl: `http://localhost:3000/urls/${shortUrlId}` });
+    res.send({ shortUrl: `https://urlshortnerapi-1.herokuapp.com/urls/${shortUrlId}` });
 })
 
 module.exports = router
