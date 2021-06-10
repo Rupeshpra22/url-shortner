@@ -25,7 +25,7 @@ router.get("/:shortUrlId", (req, res) => {
         // })
         res.redirect(longUrl);
     } else {
-        res.send(urls)
+        res.send(req.params.shortUrlId)
         res.status(400).send("Url is not present")
     }
 })
