@@ -4,11 +4,12 @@ const shortid = require("shortid");
 
 const urls = {}
 const userList = [];
-
+const localServer = "http://localhost:3000/urls/"
+const deploymentServer = "https://urlshortnerapi-1.herokuapp.com/urls/"
 router.get("/", (req, res) => {
     for (const url in urls) {
         userList.push({
-            shortUrl: `https://urlshortnerapi-1.herokuapp.com/urls/${url}`,
+            shortUrl: deploymentServer+url,
             longUrl: urls[url]
         })
     }
@@ -25,7 +26,6 @@ router.get("/:shortUrlId", (req, res) => {
         // })
         res.redirect(longUrl);
     } else {
-        res.send(req.params.shortUrlId)
         res.status(400).send("Url is not present")
     }
 })
@@ -34,9 +34,9 @@ router.post("/", (req, res) => {
     const data = req.body;
     const longUrl = data.longUrl;
     const shortUrlId = shortid.generate();
-    urls.shortUrlId = longUrl;
+    urls[shortUrlId] = longUrl;
     console.log(urls);
-    res.send({ shortUrl: `https://urlshortnerapi-1.herokuapp.com/urls/${shortUrlId}` });
+    res.send({ shortUrl: deploymentServer+shortUrlId });
 })
 
 module.exports = router
