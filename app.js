@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 const urls = require("./urls");
+const cors = require('cors');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -12,7 +13,7 @@ let allowAccessOrigin = (req,res,next)=>{
     next();
 }
 
-app.use(allowAccessOrigin);
+app.use(cors());
 
 app.use('/urls', urls);
 
