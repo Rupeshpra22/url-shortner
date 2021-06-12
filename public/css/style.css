@@ -1,0 +1,126 @@
+header h1{
+    text-align: center;
+    font-size: 36px;
+    color: #FF4500
+}
+
+main .container{
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.shortner-description{
+    margin-bottom: 5%;
+    font-size: 20px;
+}
+
+.wrapper input{
+    padding: 15px;
+}
+
+input[type="text"]{
+    width: 60%;
+    border-radius: 15px;
+    border: 1px solid black;
+    outline: 0;
+}
+
+.error{
+    color: #FF4500;
+    margin-top: 5px;
+    display: none;
+}
+
+.recently-shortened{
+    margin-top: 5%;
+    font-size: 18px;
+    cursor: pointer
+}
+input[type="button"]{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 7px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    background-color: #FF8300;
+}
+
+.shortened-link{
+    margin-top:20px;
+    text-align: center;
+    display: none;
+    min-width: 50%;
+    border: 1px solid;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+
+#shorten-url{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.shortened-link h3{
+    margin: 5px;
+}
+
+a{
+    font-size: 18px;
+}
+
+.down{
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+#all-urls{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-urls-text{
+    margin: 10px 0px;
+    font-size: 20px;
+    color: #FF4500;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    width: 70%;
+}
+
+.grid > span, .grid > a {
+    padding: 8px 4px;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+    word-break: break-all;
+    color: black
+}
+
+
+@media screen and (max-width: 500px){
+    input[type="button"]{
+        width: 20%; 
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <script src="./js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>URL Shortner</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="wrapper">
+                <div class="shortner-description">Url Shortner helps user to shorten their large url into short url &#128512</div>
+                <input type="text" id="input-text" placeholder="Shorten your link">
+                <div class="error">Please enter proper url</div>
+                <input type="button" value="Shorten" id="shorten">
+                <div class="shortened-link">
+                    <h3>Your Shortend Link<span class="down">&#128071;</span></h3>
+                    <div id="shorten-url"></div>
+                </div>
+                <a href="./html/allUrls.html" class="recently-shortened" target="_blank">Click here to see recently shortened urls <i class="fa fa-external-link"></i></a>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
