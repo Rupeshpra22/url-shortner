@@ -74,6 +74,25 @@ input[type="button"]{
 #shorten-url{
     margin-top: 10px;
     font-weight: bold;
+    padding-right: 10px;
+}
+
+.clipboard{
+    color: #FF8300;
+    padding-top:10px;
+    cursor: pointer;
+}
+
+.copy{
+    font-size: 18px;
+    color: #FF8300;
+    display: none;
+    font-weight: bold;
+}
+.short-url{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .shortened-link h3{

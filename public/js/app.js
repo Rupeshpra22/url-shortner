@@ -5,6 +5,9 @@ const shortendUrlElement = document.querySelector("#shorten-url");
 const errorElement = document.querySelector(".error");
 const recentlyShortenedElement = document.querySelector(".recently-shortened");
 const allUrlElement = document.querySelector(".all-url");
+const clipboardElement = document.querySelector(".clipboard");
+const copyElement = document.querySelector(".copy");
+
 const APIURL = "http://localhost:3000/urls/";
 const deploymentServer = "https://urlshortnerapi-1.herokuapp.com/urls/"
 
@@ -39,5 +42,23 @@ buttonElement.addEventListener("click", () => {
             .catch(error => console.log(error))
     }
 })
+
+clipboardElement.addEventListener("click", ()=>{
+    copyToClipBoard(shortendUrlElement.textContent);
+})
+
+const copyToClipBoard = (str) =>
+{
+    const el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    copyElement.style.display = "block";
+    setTimeout(function(){
+        copyElement.style.display = "none";
+    }, 2000);
+};
 
 
