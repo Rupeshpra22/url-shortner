@@ -15,7 +15,6 @@ window.onload = () => {
     inputElement.focus();
 }
 
-
 buttonElement.addEventListener("click", () => {
     const isHttpPresent = inputElement.value.split(":").includes("http");
     const isHttpsPresent = inputElement.value.split(":").includes("https");

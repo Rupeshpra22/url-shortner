@@ -18,7 +18,6 @@ router.get("/", (req, res) => {
 })
 
 router.get("/:shortUrlId", (req, res) => {
-    console.log(urls)
     const longUrl = urls[req.params.shortUrlId];
     if (longUrl) {
         res.redirect(longUrl);
