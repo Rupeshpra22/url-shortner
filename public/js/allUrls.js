@@ -1,5 +1,6 @@
 const allUrlElement = document.querySelector(".all-url");
 const gridElement = document.querySelector(".grid");
+const noData = document.querySelector(".no-data");
 
 const APIURL = "http://localhost:3000/urls/";
 const deploymentServer = "https://urlshortnerapi-1.herokuapp.com/urls/"
@@ -8,7 +9,11 @@ window.onload = () =>{
         fetch(deploymentServer)
         .then((res)=>res.json())
         .then(data=>{
+            if(data.length>0){
             constructTable(data);
+            }else{
+                noData.style.display = "flex"
+            }
         })
         .catch(err=>{
             console.log(err)

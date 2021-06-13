@@ -141,6 +141,18 @@ a{
     color: black
 }
 
+.no-data{
+    width: 70%;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    color: #FF8300;
+    font-weight: bold;
+}
 
 @media screen and (max-width: 500px){
     input[type="button"]{
